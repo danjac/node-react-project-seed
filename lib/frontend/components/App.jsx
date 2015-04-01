@@ -70,12 +70,11 @@ const Navigation = React.createClass({
     render() {
 
         const makeHref = this.context.router.makeHref,
-              brand = <Link to={makeHref("popular")}>ReactNews</Link>
+              brand = <Link to={makeHref("front")}>My project</Link>
 
         return (
             <Navbar brand={brand} className="navbar navbar-inverse" fixedTop={true} fluid={true}>
               <Nav className="navbar-left">
-                <NavItemLink to={makeHref("latest")}>new</NavItemLink>
               </Nav>
               {this.getRightNav()}
             </Navbar>
