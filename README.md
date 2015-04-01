@@ -18,6 +18,7 @@ Setup
 -----
 
 1. **npm install**
+1. mkdir bower_components
 1. Create a *.env* file with the following settings:
 
         NODE_ENV=development
