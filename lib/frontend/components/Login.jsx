@@ -10,8 +10,8 @@ import actions from '../actions'
 export default React.createClass({
 
     mixins: [
-        Reflux.listenTo(UserStore, 'onLoginSuccess'),
-        Reflux.listenTo(actions.loginFailure, 'onLoginFailure'),
+        Reflux.listenTo(actions.login.completed, 'onLoginCompleted'),
+        Reflux.listenTo(actions.login.failed, 'onLoginFailed'),
     ],
 
     contextTypes: {
@@ -29,22 +29,23 @@ export default React.createClass({
         this.context.router.transitionTo(nextPath)
     },
 
-    onLoginSuccess() {
-        const user = UserStore.getDefaultData()
-        if (user) {
-            return this.redirect()
+    componentDidMount() {
+        if (UserStore.isLoggedIn()) {
+            this.redirect()
         }
     },
 
-    onLoginFailure(errors) {
+    onLoginCompleted() {
+        this.redirect()
+    },
+
+    onLoginFailed(errors) {
         this.setState({ errors: errors || {} })
     },
 
     handleSubmit(event) {
         event.preventDefault()
-
         const data = _.mapValues(this.refs, (ref) => ref.getValue())
-
         actions.login(data)
 
     },

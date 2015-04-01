@@ -54,7 +54,7 @@ const Navigation = React.createClass({
         if (this.props.user) {
             return (
               <Nav className={className}>
-                <NavItemLink to={makeHref("user", {name: this.props.user.name})}>{this.props.user.name}</NavItemLink>
+                <NavItem>{this.props.user.name}</NavItem>
                 <NavItem onClick={actions.logout}>logout</NavItem>
               </Nav>
             )
@@ -132,7 +132,7 @@ export default React.createClass({
     },
 
     componentDidMount() {
-        actions.getUser()
+        actions.auth()
     },
 
     render() {
