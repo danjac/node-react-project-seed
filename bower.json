@@ -1,0 +1,11 @@
+{
+  "name": "lobsters",
+  "description": "",
+  "version": "0.0.w",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+  
+}

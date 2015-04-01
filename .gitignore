@@ -1,0 +1,10 @@
+bower_components
+public
+node_modules
+knexfile.js
+*.sqlite3
+*.swp
+*.swo
+*.db
+.env
+:w

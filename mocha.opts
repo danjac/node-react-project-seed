@@ -1,0 +1,3 @@
+--debug
+--recursive
+--compilers jsx:./test/compiler.js,js:babel/register
