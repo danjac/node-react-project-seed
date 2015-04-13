@@ -1,8 +1,7 @@
 import Router from 'koa-router';
 import mount from 'koa-mount';
-import * as api from '../lib/controllers/api';
-//import * as secure from '../lib/controllers/secure';
-import {index, logout} from '../lib/controllers';
+import * as api from '../src/controllers/api';
+import {index, logout} from '../src/controllers';
 
 export default (app) => {
 

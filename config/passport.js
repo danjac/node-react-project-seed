@@ -1,7 +1,7 @@
 import LocalStrategy from 'passport-local';
 import co from 'co';
 import passport from 'koa-passport';
-import User from '../lib/models/User';
+import User from '../src/models/User';
 
 export default (app) => {
 
