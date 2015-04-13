@@ -49,18 +49,6 @@ export default Reflux.createStore({
         this.warning("You're not allowed to do this");
     },
 
-    logout() {
-        this.success("Bye for now");
-    },
-
-    deletePost(post) {
-        this.success(`Your post "${post.title}" has been deleted!`);
-    },
-
-    submitPostCompleted() {
-        this.success("Thank you for your post!");
-    },
-
     signupCompleted(user) {
         this.success(`Hi ${user.name}! Welcome to the site!`);
     }
