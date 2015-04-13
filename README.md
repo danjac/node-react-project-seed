@@ -1,4 +1,4 @@
-React-node seed
+React-koa-mongodb seed
 ===================
 
 
@@ -6,13 +6,14 @@ It's built with the following tech:
 
 - ES6 + Babel
 - NodeJS
-- Express
+- Koa
 - React
 - React-router
 - Reflux
 - Bootstrap
 - Mongoose
 - Mocha
+- Webpack + Gulp
 
 Setup
 -----
