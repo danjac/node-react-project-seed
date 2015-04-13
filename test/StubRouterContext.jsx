@@ -1,33 +1,36 @@
-import React from 'react'
-  
-export default function(Component, props, stubs){
+import React from 'react';
 
-  return React.createClass({
+export default (Component, props, stubs) => {
+    function RouterStub() {}
 
-    childContextTypes: {
-        router: React.PropTypes.object
-    },
+    Object.assign(RouterStub, {
+        makePath () {},
+        makeHref () {},
+        transitionTo () {},
+        replaceWith () {},
+        goBack () {},
+        getCurrentPath () {},
+        getCurrentRoutes () {},
+        getCurrentPathname () {},
+        getCurrentParams () {},
+        getCurrentQuery () {},
+        isActive () {}
+    }, stubs);
 
-    getChildContext() {
-        return {
-            router: Object.assign({
-              makePath () {},
-              makeHref () {},
-              transitionTo () {},
-              replaceWith () {},
-              goBack () {},
-              getCurrentPath () {},
-              getCurrentRoutes () {},
-              getCurrentPathname () {},
-              getCurrentParams () {},
-              getCurrentQuery () {},
-              isActive () {},
-          }, stubs)
+    return React.createClass({
+        childContextTypes: {
+          router: React.PropTypes.func
+        },
+
+        getChildContext () {
+            return {
+                router: RouterStub
+            };
+        },
+
+        render () {
+            return <Component {...props} />;
         }
-    },
+    });
 
-    render() {
-        return <Component {...props} />
-    }
-  })
-}
+};

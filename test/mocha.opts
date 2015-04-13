@@ -1,3 +1,4 @@
 --debug
 --recursive
+--harmony-generators
 --compilers jsx:./test/compiler.js,js:babel/register

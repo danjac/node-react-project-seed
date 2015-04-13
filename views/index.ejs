@@ -4,15 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>React tutorial</title>
+    <title>Pinbook</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/vendor.css" />
 </head>
 
 <body style="padding-top: 70px;">
+    <%- component %>
+    <script>
+        window._csrf = '<%= csrfToken %>';
+        window._user = <%- user %>;
+    </script>
     <script src="/js/vendor.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="<%= appjs %>"></script>
 </body>
 
 </html>
