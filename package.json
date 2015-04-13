@@ -1,8 +1,8 @@
 {
-  "name": "react-tutorial",
+  "name": "myapp",
   "private": true,
   "version": "0.0.1",
-  "description": "JS port of lobste.rs",
+  "description": "",
   "licence": "MIT",
   "devDependencies": {
     "babel-core": "^5.0.12",
