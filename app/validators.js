@@ -17,29 +17,3 @@ export function login() {
         password: 'required'
     });
 }
-
-export function newPost(checkImage) {
-    const rules = {
-        title: ['minLength:6', 'maxLength:100'],
-        comment: [],
-        url: [
-            'required',
-            {
-                rule: 'url',
-                message: 'Please provide a valid URL'
-            }
-        ]
-    };
-
-    if (checkImage) {
-        rules.image = [
-            'required',
-            {
-                rule: 'url',
-                message: 'Please provide a valid URL'
-            }
-        ];
-    }
-    return new Checkit(rules);
-}
-
