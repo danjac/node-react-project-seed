@@ -1,5 +1,5 @@
 import send from 'koa-send';
-import UserStore from '../../app/stores/UserStore';
+import bootstrap from '../,./app/bootstrap';
 
 
 export function* logout() {
@@ -13,7 +13,9 @@ export function* index () {
     const appjs = this.app.env === 'development'? 'http://localhost:8080/js/app.js' : '/js/app.js';
     const user = this.passport.user || null;
 
-    UserStore.updateUser(user);
+    bootstrap({
+        user: user
+    });
 
     const component = yield this.reactify();
 

@@ -9,17 +9,17 @@ export default Reflux.createStore({
         this.user = null;
     },
 
-    getDefaultData() {
+    getUser() {
         return this.user;
+    },
+
+    setUser(user) {
+        this.user = user;
+        this.trigger(this.user);
     },
 
     isLoggedIn() {
         return this.user != null;
-    },
-
-    updateUser(user) {
-        this.user = user;
-        this.trigger(this.user);
     },
 
     loginCompleted(user) {
@@ -30,36 +30,10 @@ export default Reflux.createStore({
         this.updateUser(user);
     },
 
-    deletePost(post) {
-        if (this.user) {
-            this.user.totalScore -= post.score;
-            this.trigger(this.user);
-        }
-    },
-
-    submitPost(post) {
-        if (this.user) {
-            this.user.totalScore += 1;
-            this.trigger(this.user);
-        }
-    },
-
     logout() {
         this.updateUser(null);
-    },
-
-    tallyVote(post) {
-        this.user.votes.push(post._id);
-        this.trigger(this.user);
-    },
-
-    voteUp(post) {
-        this.tallyVote(post);
-    },
-
-    voteDown(post) {
-        this.tallyVote(post);
     }
+
 
 });
 
